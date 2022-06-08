@@ -1,0 +1,331 @@
+/*---------------------------NAVBAR--------------------------------*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+}
+
+#nav-bar {
+    position: sticky;
+    top: 0%;
+    background-color: #FFA800;
+    padding-bottom: 0.12%;
+    z-index: 10;
+
+
+}
+
+.navbar {
+    background-color: #0D0D0D;
+    padding: 0 !important;
+
+}
+
+.navbar-brand img {
+    height: 90px;
+    padding-left: 80px;
+    
+}
+
+.navbar-nav li {
+    padding: 17px;
+    
+}
+
+.navbar-nav li a {
+    color: white !important;
+    font-weight: 700;
+    float: right;
+    font-size: 110%;
+    
+}
+
+.fa-bars {
+    color: white;
+}
+
+.navbar-toggler {
+    outline: none !important;
+}
+
+/*----------------------------------SOBRE-NÓS-------------------------------------------------*/
+
+#sobre {
+    background: url("imagens/doacao.png") no-repeat center center;
+    background-size: cover;
+    height: 80vh;
+    color: white;
+    text-align: right;
+}
+
+.textosobre {
+    font-size: 185%;
+    font-weight: 100;
+    padding-left: 75%;
+    padding-top: 10%;
+    padding-right: 3%;
+    padding-bottom: 0%;
+}
+
+.qrcode {
+    position: static;
+    width: 25%;
+    float: left;
+    padding-left: 7%;
+    padding-bottom: 3%;
+    padding-top: 7%;
+    padding-right: 0%;
+}
+
+#botao {
+    position: absolute;
+    border: 0;
+    padding: 10px;
+    width: 200px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 50px;
+    left: 8.5%;
+    right: 0%;
+    bottom: 19%;
+    font-weight: 700;
+    background-color: #FFA800;
+}
+
+
+.doacaoescrito {
+    position: absolute;
+    padding-left: 33%;
+    padding-bottom: 10%;
+    padding-top: 13%;
+    padding-right: 0%;
+    color: black;
+}
+
+.pata {
+    height: 120%;
+    padding-left: 7%;
+}
+
+#sobre2 {
+    background: url("imagens/sobre.jpeg") no-repeat center center;
+    background-size: cover;
+    height: 45vh;
+    color: white;
+
+}
+
+.textosobre2 {
+    font-size: 30px;
+    font-weight: 100;
+    text-align: center;
+    padding-right: 10%;
+    padding-left: 10%;
+    padding-top: 3.5%;
+    padding-bottom: 2%;
+
+}
+
+/*------------------------------ADOÇÕES----------------------------------------------*/
+
+#adocao {
+    background-color: #FFA800;
+    background-size: cover;
+    height: 70vh;
+    text-align: center;
+}
+
+.title {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 70px;
+    font-weight: 100px;
+    padding-bottom: 39px;
+}
+
+
+
+/*-------------------------------CONTATO----------------------------------------------*/
+
+.contato {
+    background: url("imagens/sobre.jpeg") no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+    color: white;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.contatoescrito {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 70px;
+    font-weight: 30px;
+    padding-bottom: 0px;
+    color: white;
+    text-align: center;
+    padding-left: 20px;
+}
+
+.mapa {
+    padding-right: 0px;
+    padding-left: 90px;
+    padding-top: 40px;
+    padding-bottom: 0px;
+    position: absolute;
+}
+
+.box {
+    width: 80px;
+    height: 68px;
+    display: flex;
+    margin: 0.6rem;
+    position: absolute;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all .4s ease;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+
+}
+
+.box:hover {
+    width: 200px;
+    background: #25d366;
+    border-radius: 35px;
+    color: white;
+    box-shadow: 0 0 50px #25d3657e;
+    
+}
+
+.box:nth-child(1):hover{
+    background: #25d366;
+    box-shadow: 0 0 50px #25d3657e;
+}
+
+.box:nth-child(3):hover{
+    background: #c32aa3;
+    box-shadow: 0 0 50px #b315917c;
+}
+
+.box:nth-child(5):hover{
+    background: #1877f2;
+    box-shadow: 0 0 50px #1872f285;
+}
+
+.navbar p {
+    transform: translate(60px);
+    padding-top: 10px;
+    padding-bottom: 0px;
+    padding-left: 20px;
+}
+
+.box .icon {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:  white;
+    border-radius: 50%;
+    margin-right: 10px;
+    transition: all .4s ease;
+}
+
+.instagram {
+    background-color: #c32aa3;
+}
+
+#instagram {
+    left: 700px;
+    top: 50px;
+}
+
+
+
+.facebook {
+    background-color: #1877f2;
+}
+
+#facebook {
+    left: 700px;
+    top: 150px;
+}
+
+
+
+.whatsapp {
+    background-color: #25d366;
+}
+
+#whatsapp {
+    left: 700px;
+    top: 250px;
+}
+
+
+
+.vakinha {
+    background-color: #25d366;
+}
+
+#vakinha {
+    left: 700px;
+    top: 350px;
+    
+}
+
+
+
+.box:hover .icon {
+    background: white;
+    color: #3b3b3b;
+    box-shadow: 0 0 20px rgba(0,0,0,0.26);
+}
+
+
+
+/*-------------------------------RODAPE--------------------------------------*/
+
+
+
+.footer {
+    background: #0D0D0D;
+    position: relative;
+    color: white;
+    display: flex;
+    min-height: 100px;
+    flex-direction: column;
+    margin-top: 2px;
+    display: flex;
+}
+
+.maisdoar {
+    text-decoration: none;
+    padding-top: 90px;
+    padding-bottom: 100px;
+    padding-left: 0px;
+}
+
+.pix {
+    color: #FFA800;
+}
+
+.logobola {
+    padding-bottom: 10px;
+    padding-left: 900px;
+    padding-top: 100px;
+    display: flex;
+    position: absolute;
+
+}
