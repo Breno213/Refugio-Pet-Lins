@@ -150,9 +150,22 @@ body {
     padding-bottom: 39px;
 }
 
+.adocao{
+    margin: auto;
+    align-items: center;
+}
+
+.adocao-pet{
+    background-color: rgb(255, 0, 0);
+}
 
 
 /*-------------------------------CONTATO----------------------------------------------*/
+
+.p-contato{
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
 
 .contato {
     background: url("imagens/sobre.jpeg") no-repeat center center;
@@ -200,10 +213,10 @@ body {
 
 .box:hover {
     width: 200px;
-    background: #25d366;
+    background: #3f3f3f;
     border-radius: 35px;
     color: white;
-    box-shadow: 0 0 50px #25d3657e;
+    box-shadow: 0 0 50px #6868687e;
     
 }
 
@@ -276,7 +289,7 @@ body {
 
 
 .vakinha {
-    background-color: #25d366;
+    background-color: #3f3f3f;
 }
 
 #vakinha {
