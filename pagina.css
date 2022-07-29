@@ -56,9 +56,9 @@ body {
 /*----------------------------------SOBRE-NÓS-------------------------------------------------*/
 
 #sobre {
-    background: url("imagens/doacao.png");
+    background: url("imagens/cachorroprincipal.png");
     background-size: cover;
-    height: 80vh;
+    height: 60vh;
     color: white;
     text-align: right;
 }
