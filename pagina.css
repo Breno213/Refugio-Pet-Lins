@@ -1,9 +1,14 @@
 /*---------------------------NAVBAR--------------------------------*/
 
+:root{
+    --bg_color: #FFA800;
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
 }
 body {
     font-family: Arial, Helvetica, sans-serif;
@@ -13,7 +18,7 @@ body {
 #nav-bar {
     position: sticky;
     top: 0%;
-    background-color: #FFA800;
+    background-color: var(--bg_color);
     padding-bottom: 0.12%;
     z-index: 10;
 
@@ -170,6 +175,7 @@ body {
     height: 405px;
     margin: 40px;
     border-radius: 12px !important;
+    border: none;
 }
 
 .card-image {
@@ -201,6 +207,14 @@ body {
     color: white;
     padding: 15px 15px;
     display: block;
+    border-radius: 12px;
+    margin: 2%;
+
+}
+
+.card a:hover{
+    background-color: #FFA800;
+    color: rgb(0, 0, 0);
     text-decoration: none;
 }
 
@@ -214,6 +228,10 @@ body {
 
 /*-------------------------------CONTATO----------------------------------------------*/
 
+.contato, a, p{
+    text-decoration: none;
+}
+
 .p-contato{
     color: white;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -226,7 +244,7 @@ body {
     color: white;
     justify-content: center;
     align-items: center;
-
+    
 }
 
 .contatoescrito {
@@ -275,11 +293,13 @@ body {
 .box:nth-child(1):hover{
     background: #25d366;
     box-shadow: 0 0 50px #25d3657e;
+    
 }
 
 .box:nth-child(3):hover{
     background: #c32aa3;
     box-shadow: 0 0 50px #b315917c;
+
 }
 
 .box:nth-child(5):hover{
@@ -305,15 +325,18 @@ body {
     border-radius: 50%;
     margin-right: 10px;
     transition: all .4s ease;
+    
 }
 
 .instagram {
     background-color: #c32aa3;
+    
 }
 
 #instagram {
     left: 700px;
     top: 50px;
+    
 }
 
 
@@ -356,6 +379,10 @@ body {
     background: white;
     color: #3b3b3b;
     box-shadow: 0 0 20px rgba(0,0,0,0.26);
+}
+
+.box a{
+    text-decoration: none;
 }
 
 
