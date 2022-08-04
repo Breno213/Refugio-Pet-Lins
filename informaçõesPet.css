@@ -1,0 +1,42 @@
+#nav-bar {
+    position: sticky;
+    top: 0%;
+    background-color: var(--bg_color);
+    padding-bottom: 0.12%;
+    z-index: 10;
+
+
+}
+
+.navbar {
+    background-color: #0D0D0D;
+    padding: 0 !important;
+
+}
+
+.navbar-brand img {
+    height: 90px;
+    padding-left: 80px;
+    
+}
+
+.navbar-nav li {
+    padding: 17px;
+    
+}
+
+.navbar-nav li a {
+    color: white !important;
+    font-weight: 700;
+    float: right;
+    font-size: 110%;
+    
+}
+
+.fa-bars {
+    color: white;
+}
+
+.navbar-toggler {
+    outline: none !important;
+}
