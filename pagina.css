@@ -1,62 +1,146 @@
 /*---------------------------NAVBAR--------------------------------*/
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
 :root{
-    --bg_color: #FFA800;
+    --c_font: #000000;
+    --c_a_hover: rgba(0, 0, 0, .05);
+    --bg_navbar: #e7e7e7;
+    --c_border: rgba(0, 0, 0, .05);
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-
-}
 body {
     font-family: Arial, Helvetica, sans-serif;
     width: 100%;
+    padding: 0px;
+    margin: 0px;
 }
 
-#nav-bar {
-    position: sticky;
-    top: 0%;
-    background-color: var(--bg_color);
-    padding-bottom: 0.12%;
-    z-index: 10;
+ul{
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: var(--c_font);
+}
+
+a:hover{
+    background: var(--c_a_hover);
+}
+
+#logo{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#header{
+    /* soma a altura com o padding */
+    box-sizing: border-box;
+    height: 60px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--bg_navbar);
+}
+
+#menu{
+    display: flex;
+    /* coloca um espaço entre os itens, funciona no flexbox */
+    gap: .5rem;
+}
+
+#menu a{
+    display: block;
+    padding: .5rem;
+}
+
+#btt_mobile{
+    display: none;
+}
+
+@media (max-width: 600px){
+
+    #menu{
+        display: block;
+        position: absolute;
+        width: 100%;
+        top: 60px;
+        right: 0px;
+        background-color: var(--bg_navbar);
+        height: 0px;
+        transition: 0.6s;
+        z-index: 1000;
+        visibility: hidden;
+        overflow-y: hidden;
+    }
+
+    #menu a{
+        text-align: center;
+        padding: 1rem;
+        margin: 1rem;
+        border-bottom: 2px solid var(--c_border);
+    }
+
+    #btt_mobile{
+        display: flex;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        border: none;
+        background: none;
+        cursor: pointer;
+        gap: 0.5rem;
+    }
+
+    #icone{
+        width: 20px;
+        border-top: 2px solid;
+    }
+
+    #icone::after, #icone::before{
+        content: '';
+        display: block;
+        width: 20px;
+        height: 2px;
+        background-color: currentColor;
+        margin-top: 5px;
+        transition: 0.3s;
+        position: relative;
+    }
+
+    #navbar.active #icone{
+        border-top-color: transparent;
+    }
+
+    #navbar.active #menu{
+        height: calc(100vh - 60px);
+        visibility: visible;
+        /* Cria uma barra caso exista várias opções no menu */
+        overflow-y: auto;
+    }
+
+    #navbar.active #icone::after{
+        transform: rotate(-135deg);
+        top: -7px;
+    }
+
+    #navbar.active #icone::before{
+        transform: rotate(135deg);
+    }
+
+    /* ::-webkit-scrollbar {
+        display: none;
+    } */
 
 
 }
 
-.navbar {
-    background-color: #0D0D0D;
-    padding: 0 !important;
 
-}
 
-.navbar-brand img {
-    height: 90px;
-    padding-left: 80px;
-    
-}
 
-.navbar-nav li {
-    padding: 17px;
-    
-}
-
-.navbar-nav li a {
-    color: white !important;
-    font-weight: 700;
-    float: right;
-    font-size: 110%;
-    
-}
-
-.fa-bars {
-    color: white;
-}
-
-.navbar-toggler {
-    outline: none !important;
-}
 
 /*----------------------------------SOBRE-NÓS-------------------------------------------------*/
 
@@ -66,6 +150,7 @@ body {
     height: 80vh;
     color: white;
     text-align: right;
+    
 }
 
 .textosobre {
@@ -228,10 +313,6 @@ body {
 
 /*-------------------------------CONTATO----------------------------------------------*/
 
-.contato, a, p{
-    text-decoration: none;
-}
-
 .p-contato{
     color: white;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -270,7 +351,7 @@ body {
     height: 68px;
     display: flex;
     margin: 0.6rem;
-    position: absolute;
+    position: relative;
     overflow: hidden;
     cursor: pointer;
     transition: all .4s ease;
