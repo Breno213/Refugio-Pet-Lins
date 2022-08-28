@@ -3,10 +3,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 :root{
-    --c_font: #000000;
-    --c_a_hover: rgba(0, 0, 0, .05);
-    --bg_navbar: #e7e7e7;
-    --c_border: rgba(0, 0, 0, .05);
+    --c_font: #fffefe;
+    --c_a_hover: #FFA800(248, 240, 240, 0.05);
+    --bg_navbar: #0e0b0b;
+    --c_border: #FFA800(250, 237, 237, 0.05);
 }
 
 body {
@@ -14,6 +14,7 @@ body {
     width: 100%;
     padding: 0px;
     margin: 0px;
+    display: block !important;
 }
 
 ul{
@@ -31,16 +32,18 @@ a:hover{
     background: var(--c_a_hover);
 }
 
-#logo{
-    font-size: 1.5rem;
-    font-weight: bold;
+.logonav{
+    width: auto;
+    height: 150%;
 }
 
 #header{
     /* soma a altura com o padding */
     box-sizing: border-box;
-    height: 60px;
+    height: 80px;
     padding: 1rem;
+    margin-bottom: 1px;
+    color: #FFA800;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -147,9 +150,11 @@ a:hover{
 #sobre {
     background: url("imagens/cachorrao.jpg");
     background-size: cover !important;
-    height: 80vh;
+    height: 85vh;
     color: white;
     text-align: right;
+    padding: 0px;
+    margin: 0px;
     
 }
 
@@ -208,8 +213,10 @@ a:hover{
 #sobre2 {
     background: url("imagens/sobre.jpeg") no-repeat center center;
     background-size: cover;
-    height: 50vh;
+    height: 60vh;
     color: white;
+    display: block !important;
+    
 
 }
 
@@ -226,11 +233,13 @@ a:hover{
 
 /*------------------------------ADOÇÕES----------------------------------------------*/
 
-#adocao {
+.adocao {
     background-color: #FFA800;
     background-size: cover;
     height: 110vh;
     text-align: center;
+    margin: auto;
+    align-items: center;
 }
 
 .title {
@@ -240,11 +249,6 @@ a:hover{
     padding-bottom: 2%;
     padding-top: 2%;
     color: #000000;
-}
-
-.adocao{
-    margin: auto;
-    align-items: center;
 }
 
 
