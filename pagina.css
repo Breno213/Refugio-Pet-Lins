@@ -315,6 +315,10 @@ a:hover{
     transition: all 1s ease;
 }
 
+.vermais {
+    color: black;
+}
+
 /*-------------------------------CONTATO----------------------------------------------*/
 
 .p-contato{
