@@ -43,7 +43,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `mydb`.`animal` (
   `idanimal` INT NOT NULL,
   `nome` VARCHAR(45) NULL,
-  `imagem` VARCHAR(45) NULL,
+  /*`imagem` VARCHAR(45) NULL,*/
   `desc` VARCHAR(45) NULL,
   `disp_adocao` VARCHAR(45) NULL,
   `tipoAnimal` VARCHAR(45) NULL,
