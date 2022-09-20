@@ -20,7 +20,7 @@ USE `mydb` ;
 -- -----------------------------------------------------
 -- Table `mydb`.`usuario`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`usuario` (
+CREATE TABLE IF NOT EXISTS `usuario` (
   `idusuario` INT NOT NULL,
   `nome` VARCHAR(45) NULL,
   PRIMARY KEY (`idusuario`))
@@ -30,9 +30,9 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `mydb`.`raca`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`raca` (
+CREATE TABLE IF NOT EXISTS `raca` (
   `idraca` INT NOT NULL,
-  `desc` VARCHAR(45) NULL,
+  `nome` VARCHAR(45) NULL,
   PRIMARY KEY (`idraca`))
 ENGINE = InnoDB;
 
@@ -40,7 +40,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `mydb`.`animal`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`animal` (
+CREATE TABLE IF NOT EXISTS `animal` (
   `idanimal` INT NOT NULL,
   `nome` VARCHAR(45) NULL,
   /*`imagem` VARCHAR(45) NULL,*/

@@ -11,7 +11,7 @@ $(document).ready(function() {
         $('.modal-title').append('Adicionar novo registro')
 
         //Incluir nosso formulário dentro do corpo da nossa janela modal
-        $('.modal-body').load('crud/visao/form-pet.html')
+        $('.modal-body').load('crud/informacoes/visao/form-pet.html')
 
         //Iremos incluir uma função no botão salvar para demonstrar um novo registro
         $('.btn-salvar').attr('data-operation', 'insert')
