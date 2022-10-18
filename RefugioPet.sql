@@ -7,20 +7,8 @@ SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
--- -----------------------------------------------------
--- Schema mydb
--- -----------------------------------------------------
 
--- -----------------------------------------------------
--- Schema mydb
--- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
-USE `mydb` ;
-
--- -----------------------------------------------------
--- Table `mydb`.`admin`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`admin` (
+CREATE TABLE IF NOT EXISTS `admin` (
   `idadmin` INT NOT NULL,
   `nome` VARCHAR(45) NULL,
   `email` VARCHAR(45) NULL,
@@ -32,7 +20,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `mydb`.`raca`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`raca` (
+CREATE TABLE IF NOT EXISTS `raca` (
   `idraca` INT NOT NULL,
   `desc` VARCHAR(45) NULL,
   PRIMARY KEY (`idraca`))
@@ -42,7 +30,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `mydb`.`animal`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`animal` (
+CREATE TABLE IF NOT EXISTS `animal` (
   `idanimal` INT NOT NULL,
   `nome` VARCHAR(45) NULL,
   `imagem` VARCHAR(45) NULL,
@@ -56,12 +44,12 @@ CREATE TABLE IF NOT EXISTS `mydb`.`animal` (
   INDEX `fk_animal_raca1_idx` (`raca_idraca` ASC),
   CONSTRAINT `fk_animal_admin`
     FOREIGN KEY (`admin_idadmin`)
-    REFERENCES `mydb`.`admin` (`idadmin`)
+    REFERENCES `admin` (`idadmin`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_animal_raca1`
     FOREIGN KEY (`raca_idraca`)
-    REFERENCES `mydb`.`raca` (`idraca`)
+    REFERENCES `raca` (`idraca`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
