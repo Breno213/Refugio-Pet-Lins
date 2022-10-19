@@ -3,7 +3,7 @@ $(document).ready(function(){
         "processing": true,
         "serverSide": true,
         "ajax": {
-            "url": "src/raca/modelo/list-raca.php",
+            "url": "crud/cadastRaca/modelo/list-raca.php",
             "type": "POST"
         },
         "columns": [
