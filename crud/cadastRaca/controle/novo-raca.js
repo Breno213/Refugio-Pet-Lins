@@ -17,7 +17,7 @@ $(document).ready(function() {
         $('.btn-salvar').attr('data-operation', 'insert')
 
         //Abrir a janela modal
-        $('#modal-tipo').modal('show')
+        $('#modal-raca').modal('show')
     })
 
 })

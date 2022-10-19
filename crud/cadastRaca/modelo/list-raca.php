@@ -10,7 +10,7 @@ $requestData = $_REQUEST;
 $colunas = $requestData['columns'];
 
 //Preparar o comando sql para obter dos registros existentes no banco de dados
-$sql = "SELECT idraca FROM raca WHERE 1=1 ";
+$sql = "SELECT idraca, nome FROM raca WHERE 1=1 ";
 
 //Obter o total de registros existentes na tabela do banco de dados
 $resultado = $pdo->query($sql);
@@ -21,6 +21,7 @@ $filtro = $requestData['search']['value'];
 if(!empty($filtro)){
     //Montar a expressão logica em sql para filtrar a nossa tabela 
     $sql .= " AND (idraca LIKE '$filtro%' ";
+    $sql .= " OR nome LIKE '$filtro%') ";
 }
 
 //Obter o total de registros existentes na tabela do banco de dados de acordo com o filtro

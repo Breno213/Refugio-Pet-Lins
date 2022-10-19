@@ -8,48 +8,47 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
 
-CREATE TABLE IF NOT EXISTS `admin` (
-  `idadmin` INT NOT NULL,
-  `nome` VARCHAR(45) NULL,
-  `email` VARCHAR(45) NULL,
-  `senha` INT NULL,
-  PRIMARY KEY (`idadmin`))
+CREATE TABLE IF NOT EXISTS `ADMIN` (
+  `IDADMIN` INT NOT NULL,
+  `NOME` VARCHAR(45) NULL,
+  `EMAIL` VARCHAR(45) NULL,
+  `SENHA` INT NULL,
+  PRIMARY KEY (`IDADMIN`))
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
 -- Table `mydb`.`raca`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `raca` (
-  `idraca` INT NOT NULL,
-  `desc` VARCHAR(45) NULL,
-  PRIMARY KEY (`idraca`))
+CREATE TABLE IF NOT EXISTS `RACA` (
+  `IDRACA` INT NOT NULL,
+  `NOME` VARCHAR(45) NULL,
+  PRIMARY KEY (`IDRACA`))
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
 -- Table `mydb`.`animal`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `animal` (
-  `idanimal` INT NOT NULL,
-  `nome` VARCHAR(45) NULL,
-  `imagem` VARCHAR(45) NULL,
-  `desc` VARCHAR(45) NULL,
-  `disp_adocao` VARCHAR(45) NULL,
-  `tipoAnimal` VARCHAR(45) NULL,
-  `admin_idadmin` INT NOT NULL,
-  `raca_idraca` INT NOT NULL,
-  PRIMARY KEY (`idanimal`, `admin_idadmin`, `raca_idraca`),
-  INDEX `fk_animal_admin_idx` (`admin_idadmin` ASC),
-  INDEX `fk_animal_raca1_idx` (`raca_idraca` ASC),
-  CONSTRAINT `fk_animal_admin`
-    FOREIGN KEY (`admin_idadmin`)
-    REFERENCES `admin` (`idadmin`)
+CREATE TABLE IF NOT EXISTS `ANIMAL` (
+  `IDANIMAL` INT NOT NULL,
+  `NOME` VARCHAR(45) NULL,
+  `IMAGEM` VARCHAR(45) NULL,
+  `DISP_ADOCAO` VARCHAR(45) NULL,
+  `TIPOANIMAL` VARCHAR(45) NULL,
+  `ADMIN_IDADMIN` INT NOT NULL,
+  `RACA_IDRACA` INT NOT NULL,
+  PRIMARY KEY (`IDANIMAL`, `ADMIN_IDADMIN`, `RACA_IDRACA`),
+  INDEX `FK_ANIMAL_ADMIN_IDX` (`ADMIN_IDADMIN` ASC),
+  INDEX `FK_ANIMAL_RACA1_IDX` (`RACA_IDRACA` ASC),
+  CONSTRAINT `FK_ANIMAL_ADMIN`
+    FOREIGN KEY (`ADMIN_IDADMIN`)
+    REFERENCES `ADMIN` (`IDADMIN`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_animal_raca1`
-    FOREIGN KEY (`raca_idraca`)
-    REFERENCES `raca` (`idraca`)
+  CONSTRAINT `FK_ANIMAL_RACA1`
+    FOREIGN KEY (`RACA_IDRACA`)
+    REFERENCES `RACA` (`IDRACA`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;

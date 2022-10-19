@@ -12,6 +12,10 @@ $(document).ready(function(){
             "className": 'text-center'
         },
         {
+            "data": 'nome',
+            "className": 'text-center'
+        },
+        {
             "data": 'idraca',
             "className": 'text-center',
             "orderable": false,
