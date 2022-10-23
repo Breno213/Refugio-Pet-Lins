@@ -1,12 +1,12 @@
 <?php
 
-    include('conexao/conn.php');
+    include('../conexao/conn.php');
 
     //Obter os dados do formulário html
     $requestData = $_REQUEST;
 
     //Verificação de campos obrigatórios
-    if(empty($requestData['nome'])){
+    if(empty($requestData['NOME'])){
         //Caso a variavel vier vazia, retornar erro
         $dados = array(
             "tipo" => 'erro',
@@ -14,16 +14,16 @@
         );
     } else{
     //Caso os campos vierem preenchidos, realizar o cadastro
-        $ID = isset($requestData['idraca']) ? $requestData['idraca'] : '';
+        $ID = isset($requestData['IDRACA']) ? $requestData['IDRACA'] : '';
         $operacao = isset($requestData['operacao']) ? $requestData['operacao'] : '';
     
     // Verificação  para cadastro ou realização de registro
         if($operacao == 'insert') {
             //Comandos para o INSERT no banco de dados ocorrerem
             try {
-                $stmt = $pdo->prepare('INSERT INTO raca (nome) VALUES (:a)');
+                $stmt = $pdo->prepare('INSERT INTO RACA (NOME) VALUES (:a)');
                 $stmt->execute(array(
-                    ':a' => ($requestData['nome'])
+                    ':a' => utf8_decode($requestData['NOME'])
                 ));
                 $dados = array(
                     "tipo" => 'success',
@@ -38,10 +38,10 @@
         } else {
             //Se a nossa operação vier vazia, realizar UPDATE
             try {
-                $stmt = $pdo->prepare('UPDATE RACA SET NOME = :a WHERE IDRACA = :id');
+                $stmt = $pdo->prepare('UPDATE RACA SET NOME = :a WHERE IDRACA = :idraca');
                 $stmt->execute(array(
-                    ':id' => $ID,
-                    ':a' => ($requestData['nome'])
+                    ':idraca' => $ID,
+                    ':a' => utf8_decode($requestData['NOME'])
                 ));
                 $dados = array(
                     "tipo" => 'success',

@@ -1,7 +1,7 @@
 <?php
 
 //Realizar a conexão com o banco de dados 
-include("conexao/conn.php");
+include('../conexao/conn.php');
 
 //Obter a requisição para geração da tabela
 $requestData = $_REQUEST;
@@ -10,7 +10,7 @@ $requestData = $_REQUEST;
 $colunas = $requestData['columns'];
 
 //Preparar o comando sql para obter dos registros existentes no banco de dados
-$sql = "SELECT idraca, nome FROM raca WHERE 1=1 ";
+$sql = "SELECT IDRACA, NOME FROM RACA WHERE 1=1 ";
 
 //Obter o total de registros existentes na tabela do banco de dados
 $resultado = $pdo->query($sql);
@@ -20,8 +20,8 @@ $qtdeLinhas = $resultado->rowCount();
 $filtro = $requestData['search']['value'];
 if(!empty($filtro)){
     //Montar a expressão logica em sql para filtrar a nossa tabela 
-    $sql .= " AND (idraca LIKE '$filtro%' ";
-    $sql .= " OR nome LIKE '$filtro%') ";
+    $sql .= " AND (IDRACA LIKE '$filtro%' ";
+    $sql .= " OR NOME LIKE '$filtro%') ";
 }
 
 //Obter o total de registros existentes na tabela do banco de dados de acordo com o filtro

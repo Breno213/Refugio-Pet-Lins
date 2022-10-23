@@ -1,11 +1,11 @@
 <?php
 
 //Incluindo nossa conexão com o banco de dados 
-include('conexao/conn.php');
+include('../conexao/conn.php');
 
 $ID = $_REQUEST['idraca'];
 
-$sql = "DELETE FROM raca WHERE idraca = $ID";
+$sql = "DELETE FROM RACA WHERE idraca = $ID";
 
 $resultado = $pdo->query($sql);
 

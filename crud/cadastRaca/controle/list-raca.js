@@ -8,15 +8,15 @@ $(document).ready(function(){
         },
         "columns": [
         {
-            "data": 'idraca',
+            "data": 'IDRACA',
             "className": 'text-center'
         },
         {
-            "data": 'nome',
+            "data": 'NOME',
             "className": 'text-center'
         },
         {
-            "data": 'idraca',
+            "data": 'IDRACA',
             "className": 'text-center',
             "orderable": false,
             "searchable": false,
