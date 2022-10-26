@@ -15,7 +15,7 @@ $(document).ready(function() {
             url: 'crud/cadastRaca/modelo/salvar-raca.php',
             success: function(dados) {
                 Swal.fire({
-                    title: 'TCC Refugio',
+                    title: 'Refugio',
                     text: dados.mensagem,
                     icon: dados.vendedor,
                     confirmButtonText: 'OK'

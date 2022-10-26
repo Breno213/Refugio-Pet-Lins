@@ -1,47 +1,50 @@
 <?php
 
-    include('../conexao/conn.php');
+    // Obter a nossa conexão com o banco de dados
+    include('conexao/conn.php');
 
-    //Obter os dados do formulário html
+    // Obter os dados enviados do formulário via $_REQUEST
     $requestData = $_REQUEST;
 
-    //Verificação de campos obrigatórios
+    // Verificação de campo obrigatórios do formulário
     if(empty($requestData['NOME'])){
-        //Caso a variavel vier vazia, retornar erro
+        // Caso a variável venha vazia eu gero um retorno de erro do mesmo
         $dados = array(
-            "tipo" => 'erro',
-            "mensagem" => 'Existem campos obrigatórios não preenchidos.'
+            "tipo" => 'error',
+            "mensagem" => 'Existe(m) campo(s) obrigatório(s) não preenchido(s).'
         );
-    } else{
-    //Caso os campos vierem preenchidos, realizar o cadastro
+    } else {
+        // Caso não exista campo em vazio, vamos gerar a requisição
         $ID = isset($requestData['IDRACA']) ? $requestData['IDRACA'] : '';
         $operacao = isset($requestData['operacao']) ? $requestData['operacao'] : '';
-    
-    // Verificação  para cadastro ou realização de registro
-        if($operacao == 'insert') {
-            //Comandos para o INSERT no banco de dados ocorrerem
-            try {
+
+        // Verifica se é para cadastra um nvo registro
+        if($operacao == 'insert'){
+            // Prepara o comando INSERT para ser executado
+            try{
                 $stmt = $pdo->prepare('INSERT INTO RACA (NOME) VALUES (:a)');
                 $stmt->execute(array(
-                    ':a' => utf8_decode($requestData['NOME'])
+                    // ':a' => utf8_decode($requestData['NOME'])
+                    ':a' => $requestData['NOME'])
                 ));
                 $dados = array(
                     "tipo" => 'success',
                     "mensagem" => 'Registro salvo com sucesso.'
                 );
-            } catch (PDOException $e) {
+            } catch(PDOException $e) {
                 $dados = array(
-                    "tipo" => 'erro',
-                    "mensagem" => 'Não foi possível salvar o registro: ' .$e
+                    "tipo" => 'error',
+                    "mensagem" => 'Não foi possível efetuar o cadastro do curso.'
                 );
             }
         } else {
-            //Se a nossa operação vier vazia, realizar UPDATE
-            try {
+            // Se minha variável operação estiver vazia então devo gerar os scripts de update
+            try{
                 $stmt = $pdo->prepare('UPDATE RACA SET NOME = :a WHERE IDRACA = :idraca');
                 $stmt->execute(array(
                     ':idraca' => $ID,
-                    ':a' => utf8_decode($requestData['NOME'])
+                    // ':a' => utf8_decode($requestData['NOME'])
+                    ':a' => $requestData['NOME'])
                 ));
                 $dados = array(
                     "tipo" => 'success',
@@ -49,12 +52,12 @@
                 );
             } catch (PDOException $e) {
                 $dados = array(
-                    "tipo" => 'erro',
-                    "mensagem" => 'Não foi possível atualizar o registro: ' .$e
+                    "tipo" => 'error',
+                    "mensagem" => 'Não foi possível efetuar o alteração do registro.'
                 );
             }
-        }    
+        }
     }
 
-    //Converter o nosso array de retorno em uma representação JSON
+    // Converter um array ded dados para a representação JSON
     echo json_encode($dados);
