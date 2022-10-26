@@ -4,10 +4,10 @@
 include('../conexao/conn.php');
 
 //Recepção do id do banco de dados 
-$ID = $_REQUEST['idraca'];
+$ID = $_REQUEST['IDRACA'];
 
 //Gerar nossa consulta sql no banco de dados
-$sql = "SELECT * FROM RACA WHERE idraca = $ID";
+$sql = "SELECT * FROM RACA WHERE IDRACA = $ID";
 
 //Executar a nossa consulta querie de consulta ao banco de dados
 $resultado = $pdo->query($sql);

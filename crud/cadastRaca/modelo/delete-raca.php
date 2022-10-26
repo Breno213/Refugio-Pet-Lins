@@ -3,9 +3,9 @@
 //Incluindo nossa conexão com o banco de dados 
 include('../conexao/conn.php');
 
-$ID = $_REQUEST['idraca'];
+$ID = $_REQUEST['IDRACA'];
 
-$sql = "DELETE FROM RACA WHERE idraca = $ID";
+$sql = "DELETE FROM RACA WHERE IDRACA = $ID";
 
 $resultado = $pdo->query($sql);
 
