@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!------------------------------------NAVBAR--------------------------------------------->
+
+  <title> Refúgio Pet </title>
+  <link rel="shortcut icon" href="imagens/logobola.png" type="image/x-icon">
+  <link rel="stylesheet" href="pagina.css">
+
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="libs/fontawesome/css/all.css">
+  <link rel="stylesheet" href="libs/sweetAlert/dist/sweetalert2.css">
+  <link rel="stylesheet" href="libs/DataTables/datatables.css">
+  <script src="js/jquery-3.6.0.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="libs/DataTables/datatables.js"></script>
+  <script src="libs/sweetAlert/dist/sweetalert2.all.js"></script>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+
+
+
+  <header id="header">
+      <img class="logonav" href="#" src="imagens/logo.png">
+
+    <nav id="navbar">
+
+        <button id="btt_mobile">
+            Menu
+            <span id="icone"></span>
+        </button>
+        
+        <ul id="menu">
+          <li> <a href="index.html"> Home </a> </li>
+          <li> <a href="cadastRaca.html"> Cadastrar Raça </a> </li>
+            <li> <a href="#sobre"> Sobre Nós </a> </li>
+            <li> <a href="#adocao"> Adoções </a> </li>
+            <li> <a href="#contato"> Contato </a> </li>
+        </ul>
+    </nav>
+</header>
+
+
+
+
+
+
+            <div class="card-header">
+                <div class="card-title">
+                    <div class="row">
+                        <div class="col-12 col-md-10">
+                            <h4 class="text-dark">
+                                Contas Administradoras
+                            </h4>
+                        </div>
+                        <div class="col-12 col-md-2">
+                            <button class="btn btn-warning btn-block btn-new">
+                                <i class="fa-solid fa-circle-plus"></i> Adicionar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover" id="table-adm">
+                            <thead class="thead">
+                                <tr>
+                                    <th scope="col" class="text-center">ID</th>
+                                    <th scope="col" class="text-center">NOME</th>
+                                    <th scope="col" class="text-center">EMAIL</th>
+                                    <th scope="col" class="text-center">AÇÕES</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal-adm" tabindex="-1" role="dialog" data-backdrop="static" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Título do modal</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+            <span aria-hidden="true">&times;</span>
+          </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class='bx bxs-x-circle'></i> Fechar</button>
+                <button class="btn btn-success btn-primary btn-save"><i class='bx bxs-save' ></i> Salvar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="crud/adm/controle/new-adm.js"></script>
+<script src="crud/adm/controle/salvar-adm.js"></script>
+<script src="crud/adm/controle/list-adm.js"></script>
+<script src="crud/vendedor/controle/view-vendedor.js"></script>
+<script src="crud/vendedor/controle/edit-vendedor.js"></script>
+<script src="crud/vendedor/controle/delete-vendedor.js"></script>
+
+
+
+
+<footer class="footer">
+
+    <div class="logobola">
+      <img src="imagens/logobola.png" width="200px" height="200px">
+    </div>
+    <div class="container">
+      <div class="maisdoar">
+        <h2> MAIS FORMAS DE AJUDAR </h2>
+        <p>
+          <h4> CAIXA ECONÔMICA FEDERAL </h4>
+        </p>
+        <p>
+          <h6> AG:0318 <p> C/C PJ: 00002481-7 <p class="pix"> CNPJ: 16.974.200/0001-06 (também PIX) </p>
+              <p> REFÚGIO PET LINS </h6>
+        </p>
+      </div>
+    </div>
+
+  </footer>
+
+
+</body>
+
+</html>

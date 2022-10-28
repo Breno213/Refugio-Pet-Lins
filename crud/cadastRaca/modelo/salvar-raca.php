@@ -24,38 +24,38 @@
              try{
                  $stmt = $pdo->prepare('INSERT INTO RACA (NOME) VALUES (:a)');
                  $stmt->execute(array(
-                    ':a' => utf8_decode($requestData['NOME'])
-                 ));
-        //         $dados = array(
-        //             "tipo" => 'success',
-        //             "mensagem" => 'Registro salvo com sucesso.'
-        //         );
-        //     } catch(PDOException $e) {
-        //         $dados = array(
-        //             "tipo" => 'error',
-        //             "mensagem" => 'Não foi possível efetuar o cadastro do curso.'
-        //         );
-        //     }
-        // } else {
-        //     // Se minha variável operação estiver vazia então devo gerar os scripts de update
-        //     try{
-        //         $stmt = $pdo->prepare('UPDATE RACA SET NOME = :a WHERE IDRACA = :idraca');
-        //         $stmt->execute(array(
-        //             ':idraca' => $IDRACA,
-        //             // ':a' => utf8_decode($requestData['NOME'])
-        //             ':a' => $requestData['NOME'])
-        //         ));
-        //         $dados = array(
-        //             "tipo" => 'success',
-        //             "mensagem" => 'Registro atualizado com sucesso.'
-        //         );
-        //     } catch (PDOException $e) {
-        //         $dados = array(
-        //             "tipo" => 'error',
-        //             "mensagem" => 'Não foi possível efetuar o alteração do registro.'
-        //         );
-        //     }
-        // }
+                    ':a' => utf8_decode($requestData['NOME']
+                ));
+                 $dados = array(
+                     "tipo" => 'success',
+                     "mensagem" => 'Registro salvo com sucesso.'
+                 );
+             } catch(PDOException $e) {
+                 $dados = array(
+                     "tipo" => 'error',
+                     "mensagem" => 'Não foi possível efetuar o cadastro do curso.'
+                 );
+             }
+         } else {
+             // Se minha variável operação estiver vazia então devo gerar os scripts de update
+             try{
+                 $stmt = $pdo->prepare('UPDATE RACA SET NOME = :a WHERE IDRACA = :idraca');
+                 $stmt->execute(array(
+                     ':idraca' => $IDRACA,
+                    // ':a' => utf8_decode($requestData['NOME'])
+                     ':a' => $requestData['NOME']
+                ));
+                 $dados = array(
+                     "tipo" => 'success',
+                     "mensagem" => 'Registro atualizado com sucesso.'
+                 );
+             } catch (PDOException $e) {
+                 $dados = array(
+                     "tipo" => 'error',
+                     "mensagem" => 'Não foi possível efetuar o alteração do registro.'
+                 );
+             }
+         }
     }
 
     // Converter um array de dados para a representação JSON
