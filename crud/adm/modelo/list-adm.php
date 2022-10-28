@@ -1,7 +1,7 @@
 <?php
 
     //Realizar o include da conexão
-    include('conexao/conn.php');
+    include('/conexao/conn.php');
 
     //Obter o request vindo do datatable
     $requestData = $_REQUEST;
