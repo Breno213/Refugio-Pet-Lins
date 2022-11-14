@@ -1,23 +1,18 @@
 $(document).ready(function() {
-
-    $('.btn-novo').click(function(e){
+    $('.btn-new').click(function(e) {
         e.preventDefault()
 
-        //Limpar todas as informações já existentes em nossa modal
         $('.modal-title').empty()
         $('.modal-body').empty()
 
-        //Incluir novos textos no cabeçalho da minha janela modal
-        $('.modal-title').append('Adicionar novo registro')
+        $('.modal-title').append('Adicionar novo tipo de acesso')
 
-        //Incluir nosso formulário dentro do corpo da nossa janela modal
         $('.modal-body').load('crud/cadastRaca/visao/form-raca.html')
 
-        //Iremos incluir uma função no botão salvar para demonstrar um novo registro
-        $('.btn-salvar').attr('data-operation', 'insert')
+        $('.btn-save').show()
 
-        //Abrir a janela modal
-        $('#modal-raca').modal('show')
+        $('.btn-save').attr('data-operation', 'insert')
+
+        $('#modal-tipo').modal('show')
     })
-
 })

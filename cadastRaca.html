@@ -54,67 +54,66 @@
 
 
 
-            <div class="card-header">
-                <div class="card-title">
-                    <div class="row">
-                        <div class="col-12 col-md-10">
-                            <h4 class="text-dark">
-                                Raças cadastradas
-                            </h4>
-                        </div>
-                        <div class="col-12 col-md-2">
-                            <button class="btn btn-dark btn-block btn-novo">
-                                Adicionar
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-hover" id="table-raca">
-                            <thead class="thead-dark">
-                              <tr>
-                                  <th scope="col" class="text-center">ID</th>
-                                  <th scope="col" class="text-center">RAÇAS</th>
-                                  <th scope="col" class="text-center">AÇÕES</th>
-                              </tr>
-                            </thead>
-                        </table>
-                    </div>
-                </div>
+<div class="card-header">
+    <div class="card-title">
+        <div class="row">
+            <div class="col-12 col-md-10">
+                <h4 class="text-dark">
+                    Raças Cadastradas
+                </h4>
             </div>
+            <div class="col-12 col-md-2">
+                <button class="btn btn-warning btn-block btn-new">
+                    <i class="fa-solid fa-circle-plus"></i> Adicionar
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-hover" id="table-tipo">
+                <thead class="thead">
+                    <tr>
+                        <th scope="col" class="text-center">ID</th>
+                        <th scope="col" class="text-center">NOME</th>
+                        <th scope="col" class="text-center">AÇÕES</th>
+                    </tr>
+                </thead>
+            </table>
         </div>
     </div>
 </div>
+</div>
+</div>
+</div>
 
-<div id="modal-raca" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal-raca-title" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="modal-raca-title">Title</h5>
-                <button class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p>Content</p>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" data-dismiss="modal" aria-label="Close"><i class="fa-solid fa-circle-xmark"></i> Fechar </button>
-                <button class="btn btn-primary btn-salvar"><i class="fa-solid fa-floppy-disk"></i> Salvar </button>
-            </div>
-        </div>
-    </div>
+<div class="modal fade" id="modal-tipo" tabindex="-1" role="dialog" data-backdrop="static" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+<div class="modal-content">
+<div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Título do modal</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div class="modal-body">
+    ...
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class='bx bxs-x-circle'></i> Fechar</button>
+    <button class="btn btn-success btn-primary btn-save"><i class='bx bxs-save' ></i> Salvar</button>
+</div>
+</div>
+</div>
 </div>
 
 
 <script src="crud/cadastRaca/controle/novo-raca.js"></script>
 <script src="crud/cadastRaca/controle/salvar-raca.js"></script>
-<script src="crud/cadastRaca/controle/visualizar-raca.js"></script>
 <script src="crud/cadastRaca/controle/list-raca.js"></script>
 <script src="crud/cadastRaca/controle/editar-raca.js"></script>
 <script src="crud/cadastRaca/controle/delete-raca.js"></script>
-
+<script src="crud/cadastRaca/controle/visualizar-raca.js"></script>
 
 
 

@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $('#table-raca').DataTable({
+    $('#table-tipo').DataTable({
         "processing": true,
         "serverSide": true,
         "ajax": {
@@ -10,7 +10,7 @@ $(document).ready(function() {
             "url": "libs/DataTables/pt_br.json"
         },
         "columns": [{
-                "data": 'IDRACA',
+                "data": 'ID',
                 "className": 'text-center'
             },
             {
@@ -18,7 +18,7 @@ $(document).ready(function() {
                 "className": 'text-center'
             },
             {
-                "data": 'IDRACA',
+                "data": 'ID',
                 "orderable": false,
                 "searchable": false,
                 "className": 'text-center',

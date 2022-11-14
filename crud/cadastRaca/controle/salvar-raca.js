@@ -1,31 +1,30 @@
 $(document).ready(function() {
 
-    $('.btn-salvar').click(function (e){
+    $('.btn-save').click(function(e) {
         e.preventDefault()
 
-        let dados = $('#form-raca').serialize()
+        let dados = $('#form-tipo').serialize()
 
-        dados += `&operacao=${$('.btn-salvar').attr('data-operation')}`
-    
+        dados += `&operacao=${$('.btn-save').attr('data-operation')}`
+
         $.ajax({
             type: 'POST',
-            dataType: 'JSON',
+            dataType: 'json',
             assync: true,
             data: dados,
             url: 'crud/cadastRaca/modelo/salvar-raca.php',
             success: function(dados) {
                 Swal.fire({
-                    title: 'Refugio',
+                    title: 'e-Rifa',
                     text: dados.mensagem,
-                    icon: dados.vendedor,
+                    icon: dados.tipo,
                     confirmButtonText: 'OK'
                 })
 
-                $('#modal-raca').modal('hide')
-                $('#table-raca').DataTable().ajax.reload()
+                $('#modal-tipo').modal('hide')
+                $('#table-tipo').DataTable().ajax.reload()
             }
         })
-
     })
 
 })

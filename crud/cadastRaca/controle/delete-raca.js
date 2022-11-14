@@ -1,36 +1,40 @@
-$(document).ready(function(){
+$(document).ready(function() {
 
-    $('#table-raca').on('click', 'button.btn-delete', function(e){
+    $('#table-tipo').on('click', 'button.btn-delete', function(e) {
+
         e.preventDefault()
 
-        let ID = `idraca=${$(this).attr('id')}`
+        let ID = `ID=${$(this).attr('id')}`
 
         Swal.fire({
-            title: 'Ong',
-            text: 'Deseja realmente excluir este registro?',
+            title: 'e-Rifa',
+            text: 'Deseja realmente excluir esse registro?',
             icon: 'question',
             showCancelButton: true,
-            confirmButtonText: 'SIM',
-            cancelButtonText: 'NÃO' 
-        }).then((result) => {
-            if(result.value){
+            confirmButtonText: 'Sim',
+            cancelButtonText: 'Não'
+        }).then((result => {
+            if (result.value) {
+
                 $.ajax({
                     type: 'POST',
                     dataType: 'json',
                     assync: true,
                     data: ID,
                     url: 'crud/cadastRaca/modelo/delete-raca.php',
-                    success: function(dados){
+                    success: function(dados) {
                         Swal.fire({
-                            title: 'Ong',
+                            title: 'e-Rifa',
                             text: dados.mensagem,
                             icon: dados.tipo,
                             confirmButtonText: 'OK'
                         })
-                        $('#table-raca').DataTable().ajax.reload()
+
+                        $('#table-tipo').DataTable().ajax.reload()
                     }
                 })
-     }
-})
-})
+            }
+        }))
+
+    })
 })

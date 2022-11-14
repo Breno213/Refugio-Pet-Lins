@@ -1,7 +1,7 @@
 <?php
 
     //Realizar o include da conexão
-    include('../conexao/conn.php');
+    include('conexao/conn.php');
 
     //Obter o request vindo do datatable
     $requestData = $_REQUEST;
@@ -10,7 +10,7 @@
     $colunas = $requestData['columns'];
 
     //Preparar o comando sql para obter os dados da categoria
-    $sql = "SELECT IDRACA, NOME FROM RACA WHERE 1=1 ";
+    $sql = "SELECT ID, NOME FROM RACA WHERE 1=1 ";
 
     //Obter o total de registros cadastrados
     $resultado = $pdo->query($sql);
@@ -21,8 +21,8 @@
     if( !empty( $filtro ) ){
         //Montar a expressão lógica que irá compor os filtros
         //Aqui você deverá determinar quais colunas farão parte do filtro
-        $sql .= " AND (IDRACA LIKE '%$filtro%' ";
-        $sql .= " OR NOME LIKE '%$filtro%' ";
+        $sql .= " AND (ID LIKE '%$filtro%' ";
+        $sql .= " OR NOME LIKE '%$filtro%') ";
     }
     
     //Obter o total dos dados filtrados

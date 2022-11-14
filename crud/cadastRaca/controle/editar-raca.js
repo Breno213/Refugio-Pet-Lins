@@ -1,43 +1,42 @@
-$(document).ready(function(){
+$(document).ready(function() {
 
-    $('#table-tipo').on('click', 'button.btn-edit', function(e){
+    $('#table-tipo').on('click', 'button.btn-edit', function(e) {
+
         e.preventDefault()
 
-        //Limpar todas as informações já existentes em nossa modal
-       $('.modal-title').empty()
-       $('.modal-body').empty()
+        // Alterar as informações do modal para apresentação dos dados
 
-       //Incluir nonos textos no cabeçalho da minha janela modal
-       $('.modal-title').append('Editar registro')
+        $('.modal-title').empty()
+        $('.modal-body').empty()
 
-       let ID = `idraca=${$(this).attr('id')}`
+        $('.modal-title').append('Visualização de registro')
 
-       $('.btn-salvar').removeAttr('data-operation')
+        let ID = `ID=${$(this).attr('id')}`
 
-       $.ajax({
-        type: 'POST',
-        dataType: 'json',
-        assync: true,
-        data: ID,
-        url: 'crud/cadastRaca/modelo/visualizar-raca.php',
-        success: function(dado){
-            if(dado.tipo == 'success'){
-                $('.modal-body').load('crud/cadastRaca/visao/form-raca.html', function () {
-                    $('#nome').val(dado.dados.NOME)
-                    $('#idraca').val(dado.dados.ID)
-                })
-                $('.btn-salvar').show()
-                $('#modal-raca').modal('show')
-         }else{
-            Swal.fire({
-                title: 'Ong ',
-                text: dados.mensagem,
-                icon: dados.tipo,
-                confirmButtonText: 'OK'
-            })
-        }
-        }
-       })
+        $.ajax({
+            type: 'POST',
+            dataType: 'json',
+            assync: true,
+            data: ID,
+            url: 'crud/cadastRaca/modelo/visualizar-raca.php',
+            success: function(dado) {
+                if (dado.tipo == "success") {
+                    $('.modal-body').load('crud/cadastRaca/visao/form-raca.html', function() {
+                        $('#NOME').val(dado.dados.NOME)
+                        $('#ID').val(dado.dados.ID)
+                    })
+                    $('.btn-save').show()
+                    $('#modal-tipo').modal('show')
+                } else {
+                    Swal.fire({ // Inicialização do SweetAlert
+                        title: 'e-Rifa', // Título da janela SweetAler
+                        text: dado.mensagem, // Mensagem retornada do microserviço
+                        type: dado.tipo, // Tipo de retorno [success, info ou error]
+                        confirmButtonText: 'OK'
+                    })
+                }
+            }
+        })
+
     })
-
 })
